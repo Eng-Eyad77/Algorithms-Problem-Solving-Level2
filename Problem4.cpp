@@ -1,21 +1,19 @@
 /* 
-Write a Program to check if the number is perfect or not?
-Note: Perfect number = sum(all divisors)
-ex: 28 = 1 + 2 + 4 + 7 + 14
-6 = 1 + 2 + 3
-
-Input: 
-28 
-12
+Write a Program to print all perfect numbers from 1 to N
+input: 
+500
 
 output:
-28 is perfect
-12 is not perfect
+6
+28
+496
 */
+
 #include <iostream>
 #include <cmath>
 using namespace std;
 
+// enum enPerfectNumberOrNot { Perfect = 1, NotPerfect = 2};
 
 float ReadPositiveNumber(string Message)
 {
@@ -46,18 +44,25 @@ bool isPerfectNumber(int Number)
 }
 
 
-void PrintResult(int Number)
+void PrintPerfectNumbersFrom1ToN(int Number)
 {
     
-    if(isPerfectNumber(Number))
-        cout << Number << " is Perfect Number" << endl;
-        else
-        cout << Number << " is Not a Perfect Number" << endl;
+   for(int i = 1; i < Number; i++)
+   {
+    if(isPerfectNumber(i))
+    {
+        cout << i << endl;
+    }
+      
+   }
+       
     
 }
 
 int main()
 {
-    PrintResult(ReadPositiveNumber("Please Enter a Positive Number: "));
+    PrintPerfectNumbersFrom1ToN(ReadPositiveNumber("Please Enter a Positive Number: "));
     return 0;
 }
+
+
